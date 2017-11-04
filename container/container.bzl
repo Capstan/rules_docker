@@ -145,3 +145,11 @@ py_library(
       remote = "https://github.com/google/subpar",
       commit = "7e12cc130eb8f09c8cb02c3585a91a4043753c56",
     )
+
+  # For skylark_library.
+  if "bazel_skylib" not in excludes:
+    native.git_repository(
+        name = "bazel_skylib",
+        remote = "https://github.com/bazelbuild/bazel-skylib.git",
+        tag = "0.2.0",
+    )
