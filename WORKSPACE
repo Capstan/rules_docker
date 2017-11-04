@@ -13,24 +13,20 @@
 # limitations under the License.
 workspace(name = "io_bazel_rules_docker")
 
-# While this exists as bazel_tools, that version is tied to the installed
-# bazel tool rather than a specific source version.
-git_repository(
-    name = "io_bazel",
-    commit = "97f0290cc1197311d60f45d49f7c52b70f879a18",
-    remote = "https://github.com/bazelbuild/bazel.git",
-)
-
 load(
-    "//container:container.bzl",
-    "container_pull",
-    "container_load",
+    "//container:repos.bzl",
     container_repositories = "repositories",
 )
 
 # Consumers shouldn't need to do this themselves once WORKSPACE is
 # instantiated recursively.
 container_repositories()
+
+load(
+    "//container:container.bzl",
+    "container_pull",
+    "container_load",
+)
 
 # These are for testing.
 container_pull(

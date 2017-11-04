@@ -24,6 +24,9 @@ load(
 load(
     "//container:container.bzl",
     "container_pull",
+)
+load(
+    "//container:repos.bzl",
     _repositories = "repositories",
 )
 

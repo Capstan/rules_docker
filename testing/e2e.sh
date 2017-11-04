@@ -39,7 +39,7 @@ function EXPECT_CONTAINS() {
 }
 
 function stop_containers() {
-  docker rm -f $(docker ps -aq) > /dev/null 2>&1 || /bin/true
+  docker rm -f $(docker ps -aq) > /dev/null 2>&1 || /usr/bin/true
 }
 
 # Clean up any containers [before] we start.
@@ -75,10 +75,15 @@ local_repository(
 )
 
 load(
-  "@io_bazel_rules_docker//docker:docker.bzl",
-  "docker_repositories", "docker_pull"
+  "@io_bazel_rules_docker//docker:repos.bzl",
+  "docker_repositories",
 )
 docker_repositories()
+
+load(
+  "@io_bazel_rules_docker//docker:docker.bzl",
+  "docker_pull"
+)
 
 docker_pull(
   name = "pause",

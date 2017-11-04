@@ -218,3 +218,8 @@ skylark_library(
         "//skylib:path",
     ],
 )
+
+skylark_library(
+    name = "repos",
+    srcs = ["repos.bzl"],
+)

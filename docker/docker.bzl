@@ -23,7 +23,6 @@ load(
     docker_import = "container_import",
     docker_load = "container_load",
     docker_pull = "container_pull",
-    docker_repositories = "repositories",
 )
 
 def docker_push(*args, **kwargs):

@@ -21,6 +21,9 @@ The signature of war_image is compatible with java_library.
 load(
     "//container:container.bzl",
     "container_pull",
+)
+load(
+    "//container:repos.bzl",
     _repositories = "repositories",
 )
 

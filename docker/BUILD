@@ -22,3 +22,9 @@ skylark_library(
     srcs = ["docker.bzl"],
     deps = ["//container"],
 )
+
+skylark_library(
+    name = "repos",
+    srcs = ["repos.bzl"],
+    deps = ["//container:repos"],
+)
